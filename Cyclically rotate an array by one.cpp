@@ -9,6 +9,9 @@ Input:
 9 8 7 6 4 2 1 3
 */
 
+//Time Complexity: O(n) As we need to iterate through all the elements
+//Auxiliary Space: O(1)
+
 #include <bits/stdc++.h>
 #include<iostream>
 using namespace std;
