@@ -2,6 +2,29 @@
 //Find median in a stream
 //https://www.geeksforgeeks.org/median-of-stream-of-running-integers-using-stl/
 
+/* 
+Explanation - 
+Why minheap and maxheap?
+
+1 2 3 4 - Lower half - Stored in max heap - Root is 4 
+5 6 7 8 - Upper half - Stored in min heap - Root is 5
+1 2 3 4 5 6 7 8 - Median will beb (4+5)/2, and we can retrieve 4, 5 easily from the roots of the heap.
+
+Whichever heap is bigger in size will have its root as the median, and if both sizes are equal, any root will be median.
+
+1) If max heap is bigger - root is median - lower half
+    1.1) if current element < median - move root to minheap and insert current element in maxheap
+    1.2) else - insert current element in minheap
+2) If min heap is bigger - root is median - upper half
+    2.1) if current element > median - move root to maxheap and insert current element in minheap
+    2.2) else - insert current element in maxheap
+3) If both sizes are equal - 
+    3.1) if current element > median - insert in minheap
+    3.2) else - insert in maxheap
+    
+*/
+
+
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
